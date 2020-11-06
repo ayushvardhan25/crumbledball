@@ -4,11 +4,13 @@ class paper {
         isStatic:false, 
         'restitution':0.3,
           'friction':0.5,
-          'density':1.2
+          'density':2.1
       }
       
+      this.x=x;
+      this.y=y;
       this.r = r
-      this.body = Bodies.circle(x, y,this.r,options )
+      this.body = Bodies.circle(this.x, this.y,this.r/2,options )
     
       
       World.add(world, this.body);
@@ -18,7 +20,6 @@ class paper {
       
       push();
       translate(pos.x, pos.y);
-      
       ellipseMode(CENTER);
       fill('yellow');
       ellipse(0, 0, this.r,this.r);

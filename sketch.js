@@ -3,33 +3,38 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+
 var ball;
 var ground;
-var line ;
+var line1 ;
 var line2;
 var line3;
+var world, engine;
+
 function preload()
 {
 	
 }
 
 function setup() {
-	createCanvas(800, 400);
+	createCanvas(1440, 700);
 
 
 	engine = Engine.create();
 	world = engine.world;
 
 	//Create the Bodies Here.
-ball=new paper(50,375,30,30);
+ball=new paper(200,450,30);
 //World.add(world,ball);
-ground = new ground1(400,400,800,20)
+ground = new ground1(720,650,1440,20)
 
-line1 = new Dustbin(650,380,150,20)
-line2 = new Dustbin(570,340,20,100)
-line3 = new Dustbin(720,340,20,100)
+line1 = new Dustbin(1200,540,20,200)
+line2 = new Dustbin(1120,630,150,20)
+line3 = new Dustbin(1050,540,20,200)
 
 //keyPressed();
+
+Engine.run(engine);
 }
 
 
