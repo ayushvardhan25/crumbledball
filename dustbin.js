@@ -7,19 +7,17 @@ class Dustbin {
       this.body = Bodies.rectangle(x, y, width,height, options)
       this.width = width;
       this.height = height;
-      
+      this.image = loadImage("dusabin1.png");
       World.add(world, this.body);
     }
     display(){
-      var pos =this.body.position;
-      var angle = this.body.angle;
-      push();
-      translate(pos.x, pos.y);
      
-      rectMode(CENTER);
+     
+     
+      imageMode(CENTER);
       fill('yellow');
-      rect(0, 0, this.width, this.height);
-      pop();
+      image(this.image,1200, 550, this.width, this.height);
+     
     }
   };
   
